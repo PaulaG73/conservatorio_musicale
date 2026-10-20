@@ -135,7 +135,7 @@ export default {
   },
   methods: {
     esEscritorio() {
-      return window.matchMedia('(min-width: 1101px)').matches
+      return window.matchMedia('(min-width: 701px)').matches
     },
     alternar(to) {
       this.submenu = this.submenu === to ? '' : to
