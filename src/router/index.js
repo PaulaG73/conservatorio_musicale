@@ -30,7 +30,7 @@ const routes = [
     path: '/alumnos',
     name: 'alumnos',
     component: () => import('../views/AlumnosView.vue'),
-    meta: { title: 'Alumnos' }
+    meta: { title: 'Acceso alumnos' }
   },
   {
     path: '/servicios',

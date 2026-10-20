@@ -12,10 +12,12 @@
         aria-controls="navegacion"
         @click="abierto = !abierto"
       >
-        <span class="visually-hidden">{{ abierto ? 'Cerrar menú' : 'Abrir menú' }}</span>
-        <span class="menu-toggle__bar"></span>
-        <span class="menu-toggle__bar"></span>
-        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </span>
+        <span class="menu-toggle__label">{{ abierto ? 'Cerrar' : 'Menú' }}</span>
       </button>
 
       <nav id="navegacion" class="nav" :class="{ 'is-open': abierto }" aria-label="Secciones">
@@ -23,15 +25,15 @@
           v-for="link in enlaces"
           :key="link.to"
           class="nav__item"
-          :class="{ 'is-open': submenu === link.to }"
+          :class="{ 'is-open': submenu === link.to, 'nav__item--acceso': link.destacado }"
           @mouseenter="entrar(link)"
           @mouseleave="salir"
         >
           <div class="nav__row">
             <router-link
               class="nav__link"
+              :class="{ 'is-current': $route.path === link.to, 'nav__link--acceso': link.destacado }"
               :to="link.to"
-              :class="{ 'is-current': $route.path === link.to }"
             >
               {{ link.label }}
             </router-link>
@@ -88,13 +90,12 @@ export default {
           label: 'Cátedras',
           hijos: [
             { label: 'Iniciación musical', to: { path: '/catedras', hash: '#iniciacion' } },
-            { label: 'Clases de canto', to: { path: '/catedras', hash: '#canto' } },
-            { label: 'Clases de piano', to: { path: '/catedras', hash: '#piano' } },
-            { label: 'Clases de percusión', to: { path: '/catedras', hash: '#percusion' } },
-            { label: 'Otras', to: { path: '/catedras', hash: '#otras' } }
+            { label: 'Canto', to: { path: '/catedras', hash: '#canto' } },
+            { label: 'Piano', to: { path: '/catedras', hash: '#piano' } },
+            { label: 'Violín', to: { path: '/catedras', hash: '#violin' } },
+            { label: 'Guitarra', to: { path: '/catedras', hash: '#guitarra' } }
           ]
         },
-        { to: '/alumnos', label: 'Alumnos' },
         {
           to: '/servicios',
           label: 'Servicios',
@@ -106,7 +107,8 @@ export default {
         { to: '/noticias', label: 'Noticias' },
         { to: '/eventos', label: 'Eventos' },
         { to: '/testimonios', label: 'Testimonios' },
-        { to: '/contacto', label: 'Contacto' }
+        { to: '/contacto', label: 'Contacto' },
+        { to: '/alumnos', label: 'Acceso alumnos', destacado: true }
       ]
     }
   },

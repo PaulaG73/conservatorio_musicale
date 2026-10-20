@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="04" titulo="Alumnos" />
+    <PageIntro indice="04" titulo="Acceso alumnos" />
     <p class="lede">{{ lorem }}</p>
     <p class="note">
       Este registro crea el acceso del alumno. Más adelante, con la clave, podrá consultar sus notas y certificados.
@@ -38,10 +38,10 @@
           <select id="catedra" v-model="form.catedra">
             <option disabled value="">Elige una cátedra</option>
             <option>Iniciación musical</option>
-            <option>Clases de canto</option>
-            <option>Clases de piano</option>
-            <option>Clases de percusión</option>
-            <option>Otra</option>
+            <option>Canto</option>
+            <option>Piano</option>
+            <option>Violín</option>
+            <option>Guitarra</option>
           </select>
           <span v-if="errores.catedra" class="field__error" role="alert">{{ errores.catedra }}</span>
         </div>

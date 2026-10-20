@@ -206,7 +206,7 @@ p {
 .nav__sub a {
   text-decoration: none;
   font-size: 0.68rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink);
@@ -217,6 +217,31 @@ p {
 .nav__sub a:hover,
 .nav__sub a.router-link-exact-active {
   color: var(--accent);
+}
+
+.nav__link--acceso {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.45rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #141414;
+  color: var(--white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 3px 0 #000;
+}
+
+.nav__link--acceso:hover,
+.nav__link--acceso.is-current {
+  color: var(--white);
+  background: #2c2c2c;
+}
+
+@media (min-width: 701px) {
+  .brand .logo__img {
+    height: 6.15rem;
+  }
 }
 
 .nav__toggle {
@@ -404,8 +429,9 @@ p {
 
 .hero__cta {
   position: relative;
-  z-index: 1;
-  margin: 1.7rem 0 0;
+  z-index: 3;
+  align-self: center;
+  margin: 1.85rem 0 0;
 }
 
 .button {
@@ -448,28 +474,34 @@ p {
 }
 
 .button.hero__cta {
-  background: linear-gradient(180deg, #f6e7c2 0%, #d4b36a 48%, #9a7438 100%);
+  border-radius: 1.8rem;
+  padding: 0.95rem 1.7rem;
+  background: linear-gradient(180deg, #fff4d4 0%, #f0d48a 18%, #d4b36a 46%, #a07d3a 78%, #7a5a28 100%);
   color: #24180c;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    0 4px 0 #6d5224,
-    0 8px 16px rgba(0, 0, 0, 0.45);
+    inset 0 2px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -4px 6px rgba(90, 58, 18, 0.35),
+    0 7px 0 #5a4016,
+    0 12px 18px rgba(0, 0, 0, 0.38);
 }
 
 .button.hero__cta:hover {
-  background: linear-gradient(180deg, #efe0b4 0%, #c4a15c 50%, #8a672f 100%);
+  background: linear-gradient(180deg, #fff0c4 0%, #e6c56e 22%, #c4a15c 52%, #8d682c 100%);
   color: #24180c;
+  transform: translateY(2px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    0 3px 0 #6d5224,
-    0 6px 12px rgba(0, 0, 0, 0.4);
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -3px 5px rgba(90, 58, 18, 0.3),
+    0 5px 0 #5a4016,
+    0 9px 14px rgba(0, 0, 0, 0.34);
 }
 
 .button.hero__cta:active {
   color: #24180c;
+  transform: translateY(7px);
   box-shadow:
-    inset 0 2px 5px rgba(40, 28, 10, 0.45),
-    0 0 0 #6d5224;
+    inset 0 3px 6px rgba(60, 38, 12, 0.45),
+    0 0 0 #5a4016;
 }
 
 .form .button {
@@ -910,16 +942,11 @@ p {
 
   .footer__legal {
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.2rem;
   }
 
-  .footer__logo .logo__img {
-    height: 5.5rem;
-  }
-
-  .footer__logo.logo--inverse .logo__city {
-    font-size: 0.52rem;
-    letter-spacing: 0.08em;
+  .footer__logo {
+    display: none;
   }
 }
 
@@ -936,7 +963,7 @@ p {
   }
 
   .brand .logo__img {
-    height: 3.55rem;
+    height: 4.2rem;
   }
 
   .nav {
@@ -951,8 +978,68 @@ p {
 }
 
 @media (max-width: 700px) {
+  :root {
+    --header: clamp(9.2rem, 54vw, 13rem);
+  }
+
+  .header__inner {
+    width: calc(100% - 1.25rem);
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .brand .logo__img {
+    width: clamp(8.75rem, 54vw, 12.5rem);
+    height: auto;
+  }
+
+  .brand .logo__city {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+
   .menu-toggle {
     display: inline-flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    align-self: center;
+    gap: 0.6rem;
+    width: auto;
+    height: auto;
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    background: #141414;
+    color: #fff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      0 3px 0 #000;
+  }
+
+  .menu-toggle__bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.28rem;
+  }
+
+  .menu-toggle__bar {
+    width: 1.2rem;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+  }
+
+  .menu-toggle__label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .nav {
@@ -1008,6 +1095,23 @@ p {
   .nav__sub a {
     padding: 0.55rem 0 0.55rem 0.8rem;
     font-size: 0.72rem;
+  }
+
+  .nav__item--acceso .nav__row {
+    border-bottom: 0;
+    justify-content: center;
+    padding: 0.85rem 0 0.15rem;
+  }
+
+  .nav__link--acceso {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .hero__cta {
+    margin-top: 1.35rem;
   }
 }
 

@@ -77,8 +77,8 @@
         </h1>
       </div>
       <h2>Cultura de la emoción</h2>
-      <router-link class="button hero__cta" to="/contacto">Contáctanos</router-link>
     </div>
+    <router-link class="button hero__cta" to="/contacto">Contáctanos</router-link>
     <div class="hero__keys" aria-hidden="true">
       <svg viewBox="-70 210 1340 800" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(592 611) scale(1.08 0.55) translate(-592 -611)">
