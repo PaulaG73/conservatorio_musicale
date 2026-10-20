@@ -907,6 +907,20 @@ p {
   .footer__credit {
     display: none;
   }
+
+  .footer__legal {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .footer__logo .logo__img {
+    height: 5.5rem;
+  }
+
+  .footer__logo.logo--inverse .logo__city {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+  }
 }
 
 @media (min-width: 720px) {
@@ -1006,12 +1020,6 @@ p {
 @media (max-width: 560px) {
   .teachers {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .footer__logo .logo__img {
-    height: 3.6rem;
   }
 }
 
