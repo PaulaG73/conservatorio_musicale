@@ -46,12 +46,13 @@
           </svg>
         </a>
       </div>
-      <div>
-        <p><span class="footer__copy-mark">©</span> Todos los derechos reservados Conservatorio Musicale 2026</p>
-        <p>Sitio web creado por PWEBDEV</p>
+      <div class="footer__legal">
+        <p><span class="footer__copy-mark">©</span> Todos los derechos reservados</p>
+        <LogoMark inverse class="footer__logo" />
+        <p>Conservatorio Musicale 2026</p>
       </div>
+      <p class="footer__credit">Sitio web creado por PWEBDEV</p>
       </div>
-      <LogoMark inverse class="footer__logo" />
     </div>
   </footer>
 </template>
