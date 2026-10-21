@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="08" titulo="Testimonios" />
+    <PageIntro titulo="Testimonios" />
     <p class="lede">{{ lorem }}</p>
     <div class="quotes">
       <blockquote v-for="item in testimonios" :key="item.id" class="quote">

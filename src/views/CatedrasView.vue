@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="03" titulo="Cátedras musicales">
+    <PageIntro titulo="Cátedras musicales">
       <nav class="subnav" aria-label="En esta página">
         <a href="#iniciacion">Iniciación musical</a>
         <a href="#canto">Canto</a>

@@ -10,9 +10,7 @@ const routes = [
   },
   {
     path: '/historia',
-    name: 'historia',
-    component: () => import('../views/HistoriaView.vue'),
-    meta: { title: 'Historia' }
+    redirect: { path: '/nosotros', hash: '#historia' }
   },
   {
     path: '/nosotros',

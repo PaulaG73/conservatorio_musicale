@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="05" titulo="Otros servicios">
+    <PageIntro titulo="Otros servicios">
       <nav class="subnav" aria-label="En esta página">
         <a href="#pilates">Pilates</a>
         <a href="#yoga">Yoga</a>

@@ -2,7 +2,17 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__copy">
-      <div class="socials">
+      <div class="footer__links">
+        <a
+          class="footer__partner"
+          href="https://www.instagram.com/ensamblevozdemujer/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img class="logo-ensamble" src="/logo_ensamble.jpg" alt="">
+          <span>Ensamble<br>Voz de Mujer</span>
+        </a>
+        <div class="socials">
         <a
           class="social"
           href="https://wa.me/56996450950"
@@ -44,6 +54,16 @@
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3.2 5.5h17.6A1.2 1.2 0 0 1 22 6.7v10.6a1.2 1.2 0 0 1-1.2 1.2H3.2A1.2 1.2 0 0 1 2 17.3V6.7a1.2 1.2 0 0 1 1.2-1.2zm.35 1.55v.2l8.45 5.35 8.45-5.35v-.2H3.55zm16.9 1.15-7.72 4.9a1.15 1.15 0 0 1-1.22 0L3.8 8.2v8.85h16.4V8.2z" />
           </svg>
+        </a>
+        </div>
+        <a
+          class="footer__partner"
+          href="https://www.instagram.com/sociedadbachlaserena/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img class="footer__partner-img--invert" src="/logo_sociedad_bach.jpg" alt="">
+          <span>Sociedad Bach<br>La Serena</span>
         </a>
       </div>
       <div class="footer__legal">

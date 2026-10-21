@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="09" titulo="Contacto" />
+    <PageIntro titulo="Contacto" />
     <p class="lede">{{ lorem }}</p>
     <p class="hint">
       Por ahora el formulario solo revisa los datos en esta página. El envío se conectará más adelante.
@@ -26,7 +26,7 @@
         <textarea id="contacto-mensaje" v-model.trim="form.mensaje"></textarea>
         <span v-if="errores.mensaje" class="field__error" role="alert">{{ errores.mensaje }}</span>
       </div>
-      <button class="button" type="submit">Enviar</button>
+      <button class="button button--acceso" type="submit">Enviar</button>
     </form>
   </article>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="07" titulo="Próximos eventos" />
+    <PageIntro titulo="Próximos eventos" />
     <p class="lede">{{ lorem }}</p>
     <div class="billboard">
       <article v-for="evento in eventos" :key="evento.id" class="billboard__item">

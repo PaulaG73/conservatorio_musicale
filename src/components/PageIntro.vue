@@ -1,6 +1,5 @@
 <template>
   <header class="page__header">
-    <p class="eyebrow">{{ indice }}</p>
     <h1>{{ titulo }}</h1>
     <slot></slot>
   </header>
@@ -10,10 +9,6 @@
 export default {
   name: 'PageIntro',
   props: {
-    indice: {
-      type: String,
-      required: true
-    },
     titulo: {
       type: String,
       required: true

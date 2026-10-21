@@ -30,7 +30,18 @@
           @mouseleave="salir"
         >
           <div class="nav__row">
+            <button
+              v-if="link.soloMenu"
+              type="button"
+              class="nav__link"
+              :aria-expanded="submenu === link.to ? 'true' : 'false'"
+              @click="alternar(link.to)"
+            >
+              {{ link.label }}
+              <span class="nav__caret" aria-hidden="true"></span>
+            </button>
             <router-link
+              v-else
               class="nav__link"
               :class="{ 'is-current': $route.path === link.to, 'nav__link--acceso': link.destacado }"
               :to="link.to"
@@ -38,7 +49,7 @@
               {{ link.label }}
             </router-link>
             <button
-              v-if="link.hijos"
+              v-if="link.hijos && !link.soloMenu"
               class="nav__toggle"
               type="button"
               :aria-expanded="submenu === link.to ? 'true' : 'false'"
@@ -49,13 +60,22 @@
             </button>
           </div>
           <div v-if="link.hijos" class="nav__sub">
-            <router-link
-              v-for="hijo in link.hijos"
-              :key="hijo.label"
-              :to="hijo.to"
-            >
-              {{ hijo.label }}
-            </router-link>
+            <template v-for="hijo in link.hijos" :key="hijo.label">
+              <a
+                v-if="hijo.href"
+                class="nav__sub-partner"
+                :href="hijo.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click="cerrar"
+              >
+                <img :src="hijo.logo" alt="" :class="{ 'logo-ensamble': hijo.logo.includes('ensamble') }">
+                <span>{{ hijo.label }}</span>
+              </a>
+              <router-link v-else :to="hijo.to">
+                {{ hijo.label }}
+              </router-link>
+            </template>
           </div>
         </div>
       </nav>
@@ -75,11 +95,11 @@ export default {
       submenu: '',
       enlaces: [
         { to: '/', label: 'Inicio' },
-        { to: '/historia', label: 'Historia' },
         {
           to: '/nosotros',
           label: 'Nosotros',
           hijos: [
+            { label: 'Historia', to: { path: '/nosotros', hash: '#historia' } },
             { label: 'Nuestra inspiración', to: { path: '/nosotros', hash: '#inspiracion' } },
             { label: 'Fundadora', to: { path: '/nosotros', hash: '#fundadora' } },
             { label: 'Profesores', to: { path: '/nosotros', hash: '#profesores' } }
@@ -102,6 +122,23 @@ export default {
           hijos: [
             { label: 'Pilates', to: { path: '/servicios', hash: '#pilates' } },
             { label: 'Yoga', to: { path: '/servicios', hash: '#yoga' } }
+          ]
+        },
+        {
+          to: 'links',
+          label: 'Links',
+          soloMenu: true,
+          hijos: [
+            {
+              label: 'Ensamble Voz de Mujer',
+              href: 'https://www.instagram.com/ensamblevozdemujer/',
+              logo: '/logo_ensamble.jpg'
+            },
+            {
+              label: 'Sociedad Bach La Serena',
+              href: 'https://www.instagram.com/sociedadbachlaserena/',
+              logo: '/logo_sociedad_bach.jpg'
+            }
           ]
         },
         { to: '/noticias', label: 'Noticias' },
@@ -141,6 +178,10 @@ export default {
     },
     alternar(to) {
       this.submenu = this.submenu === to ? '' : to
+    },
+    cerrar() {
+      this.submenu = ''
+      this.abierto = false
     },
     entrar(link) {
       if (link.hijos && this.esEscritorio()) this.submenu = link.to

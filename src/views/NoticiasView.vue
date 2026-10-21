@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="06" titulo="Noticias" />
+    <PageIntro titulo="Noticias" />
     <p class="lede">{{ lorem }}</p>
     <div class="cards">
       <article v-for="noticia in noticias" :key="noticia.id" class="card">

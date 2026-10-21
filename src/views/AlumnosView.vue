@@ -1,6 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro indice="04" titulo="Acceso alumnos" />
+    <PageIntro titulo="Acceso alumnos" />
     <p class="lede">{{ lorem }}</p>
     <p class="note">
       Este registro crea el acceso del alumno. Más adelante, con la clave, podrá consultar sus notas y certificados.
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <button class="button" type="submit">Crear acceso</button>
+      <button class="button button--acceso" type="submit">Crear acceso</button>
     </form>
   </article>
 </template>
