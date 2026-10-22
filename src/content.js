@@ -55,10 +55,10 @@ export const eventos = [
 ]
 
 export const profesores = [
-  { id: 'canto', nombre: 'Nombre', catedra: 'Canto', cv: '#' },
-  { id: 'piano', nombre: 'Nombre', catedra: 'Piano', cv: '#' },
-  { id: 'percusion', nombre: 'Nombre', catedra: 'Percusión', cv: '#' },
-  { id: 'iniciacion', nombre: 'Nombre', catedra: 'Iniciación musical', cv: '#' }
+  { id: 'iniciacion', nombre: 'Ale', catedra: 'Iniciación musical y Canto', cv: '#', foto: '/Ale.png', encuadre: 'center 42%' },
+  { id: 'piano', nombre: 'Nombre', catedra: 'Iniciación musical y Piano', cv: '#' },
+  { id: 'violin', nombre: 'Cecilia Olmos', catedra: 'Violín', cv: '#', foto: '/Cecilia_olmos.jpg' },
+  { id: 'guitarra', nombre: 'Nombre', catedra: 'Guitarra', cv: '#' }
 ]
 
 export const testimonios = [
