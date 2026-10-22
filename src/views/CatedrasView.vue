@@ -1,14 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro titulo="Cátedras musicales">
-      <nav class="subnav" aria-label="En esta página">
-        <a href="#iniciacion">Iniciación musical</a>
-        <a href="#canto">Canto</a>
-        <a href="#piano">Piano</a>
-        <a href="#violin">Violín</a>
-        <a href="#guitarra">Guitarra</a>
-      </nav>
-    </PageIntro>
+    <PageIntro titulo="Cátedras musicales" />
     <p class="lede">{{ lorem }}</p>
     <div class="blocks">
       <SectionBlock ancla="iniciacion" titulo="Iniciación musical" :texto="lorem" />

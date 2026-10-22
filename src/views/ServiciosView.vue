@@ -1,11 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro titulo="Otros servicios">
-      <nav class="subnav" aria-label="En esta página">
-        <a href="#pilates">Pilates</a>
-        <a href="#yoga">Yoga</a>
-      </nav>
-    </PageIntro>
+    <PageIntro titulo="Otros servicios" />
     <p class="lede">{{ lorem }}</p>
     <div class="blocks">
       <SectionBlock ancla="pilates" titulo="Pilates" :texto="lorem" />

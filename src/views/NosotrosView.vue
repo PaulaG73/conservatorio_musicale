@@ -1,14 +1,6 @@
 <template>
   <article class="page">
-    <PageIntro titulo="Nosotros">
-      <nav class="subnav" aria-label="En esta página">
-        <a href="#historia">Historia</a>
-        <a href="#inspiracion">Nuestra inspiración</a>
-        <a href="#fundadora">Fundadora</a>
-        <a href="#profesores">Profesores</a>
-      </nav>
-    </PageIntro>
-    <p class="lede">{{ lorem }}</p>
+    <PageIntro titulo="Nosotros" />
     <div class="blocks">
       <SectionBlock ancla="historia" titulo="Historia" :texto="lorem" />
       <SectionBlock ancla="inspiracion" titulo="Nuestra inspiración" :texto="lorem" />

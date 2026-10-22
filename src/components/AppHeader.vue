@@ -1,6 +1,17 @@
 <template>
   <header class="header">
     <div class="header__inner">
+      <router-link
+        v-if="$route.path !== '/'"
+        class="home-back"
+        to="/"
+        aria-label="Volver al inicio"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14.5 5.5 L8 12 l6.5 6.5" />
+        </svg>
+      </router-link>
+
       <router-link class="brand" to="/" aria-label="Conservatorio Musicale, ir al inicio">
         <LogoMark />
       </router-link>
